@@ -1,0 +1,16 @@
+[submodule "src/roverrobotics_ros2"]
+	path = src/roverrobotics_ros2
+	url = https://github.com/michbelle/roverrobotics_ros2.git
+	branch = main
+[submodule "rover_install_scripts_ros2"]
+	path = rover_install_scripts_ros2
+	url = https://github.com/michbelle/rover_install_scripts_ros2.git
+	branch = main
+[submodule "src/rplidar_ros"]
+	path = src/rplidar_ros
+	url = https://github.com/michbelle/rplidar_ros.git
+	branch = ros2
+[submodule "src/witmotion_IMU_ros"]
+	path = src/witmotion_IMU_ros
+	url = https://github.com/michbelle/witmotion_IMU_ros_f.git
+	branch = minirover
