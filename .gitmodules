@@ -6,9 +6,9 @@
 	path = rover_install_scripts_ros2
 	url = https://github.com/michbelle/rover_install_scripts_ros2.git
 	branch = main
-[submodule "src/rplidar_ros"]
-	path = src/rplidar_ros
-	url = https://github.com/michbelle/rplidar_ros.git
+[submodule "src/rplidar_ros2"]
+	path = src/rplidar_ros2
+	url = https://github.com/michbelle/rplidar_ros2.git
 	branch = ros2
 [submodule "src/witmotion_IMU_ros"]
 	path = src/witmotion_IMU_ros
