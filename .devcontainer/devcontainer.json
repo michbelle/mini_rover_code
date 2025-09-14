@@ -1,7 +1,7 @@
 {
     "name": "ROS 2 dev Container",
     "privileged": true,
-    "image": "osrf/ros:jazzy-desktop-full",
+    "image": "osrf/ros:humble-desktop-full",
     "remoteUser": "root",
     "workspaceFolder": "/root/ff_ws/",
     "workspaceMount": "source=${localWorkspaceFolder},target=/root/ff_ws/,type=bind",
