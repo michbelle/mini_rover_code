@@ -47,7 +47,8 @@ def generate_launch_description():
 
     # Create our own temporary YAML files that include substitutions
     param_substitutions = {
-        'use_sim_time': use_sim_time,}
+        'use_sim_time': use_sim_time,
+        "yaml_filename": os.path.join(bringup_dir, 'maps', "elettra","amcl",'map.yaml')}
 
     configured_params = RewrittenYaml(
         source_file=params_file,
