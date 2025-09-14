@@ -27,7 +27,7 @@ def generate_launch_description():
         description='World file to use in Gazebo')
     
     gz_world_arg = PathJoinSubstitution([
-        get_package_share_directory("mini_simulation"),'sim_worlds', world])
+        get_package_share_directory("mini_simulation"),'worlds', world])
 
     # Include the gz sim launch file  
     gz_sim_share = get_package_share_directory("ros_gz_sim")
