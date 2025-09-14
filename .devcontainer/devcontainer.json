@@ -21,7 +21,7 @@
     "containerEnv": {
         "DISPLAY": "unix:0",
         "ROS_AUTOMATIC_DISCOVERY_RANGE": "LOCALHOST", //from jazzy doc is defined
-        "ROS_DOMAIN_ID": "42"
+        "ROS_DOMAIN_ID": "10"
     },
     "runArgs": [
         "--net=host",
