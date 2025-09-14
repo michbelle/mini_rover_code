@@ -6,7 +6,7 @@ from launch_ros.substitutions import FindPackageShare
 
 def generate_launch_description():
     # Positioning function pack
-    pkg_share = FindPackageShare(package='myCode').find('myCode')
+    pkg_share = FindPackageShare(package='mini_launchpad').find('mini_launchpad')
     
     # Configure node launch information 
     use_sim_time = LaunchConfiguration('use_sim_time', default='false')
