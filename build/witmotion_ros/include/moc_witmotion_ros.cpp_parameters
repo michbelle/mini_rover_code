@@ -1,7 +1,0 @@
--I/root/ros2_ws/src/witmotion_IMU_ros/include
--I/opt/ros/humble/include/tf2_geometry_msgs
--I/opt/ros/iron/include/tf2_geometry_msgs
--I/root/ros2_ws/src/witmotion_IMU_ros/witmotion-uart-qt/include
--o
-/root/ros2_ws/build/witmotion_ros/include/moc_witmotion_ros.cpp
-/root/ros2_ws/src/witmotion_IMU_ros/include/witmotion_ros.h

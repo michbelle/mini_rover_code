@@ -1,1 +1,0 @@
-Invoking command in '/root/ros2_ws/build/witmotion_ros': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /root/ros2_ws/src/witmotion_IMU_ros -DCMAKE_INSTALL_PREFIX=/root/ros2_ws/install/witmotion_ros

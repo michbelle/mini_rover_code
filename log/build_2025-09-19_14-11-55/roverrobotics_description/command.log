@@ -1,5 +1,0 @@
-Invoking command in '/root/ros2_ws/build/roverrobotics_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /root/ros2_ws/src/roverrobotics_ros2/roverrobotics_description -DCMAKE_INSTALL_PREFIX=/root/ros2_ws/install/roverrobotics_description
-Invoked command in '/root/ros2_ws/build/roverrobotics_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /root/ros2_ws/src/roverrobotics_ros2/roverrobotics_description -DCMAKE_INSTALL_PREFIX=/root/ros2_ws/install/roverrobotics_description
-Invoking command in '/root/ros2_ws/build/roverrobotics_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /root/ros2_ws/build/roverrobotics_description -- -j8 -l8
-Invoked command in '/root/ros2_ws/build/roverrobotics_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /root/ros2_ws/build/roverrobotics_description -- -j8 -l8
-Invoking command in '/root/ros2_ws/build/roverrobotics_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /root/ros2_ws/build/roverrobotics_description
