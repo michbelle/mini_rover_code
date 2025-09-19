@@ -1,0 +1,65 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"witmotion-uart-qt/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 0,
+			"id" : "witmotion-uart::@4845f97aed81b7fdf308"
+		}
+	],
+	"id" : "message-enumerator_autogen::@4845f97aed81b7fdf308",
+	"isGeneratorProvided" : true,
+	"name" : "message-enumerator_autogen",
+	"paths" : 
+	{
+		"build" : "witmotion-uart-qt",
+		"source" : "witmotion-uart-qt"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				1
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/root/ros2_ws/build/witmotion_ros/witmotion-uart-qt/CMakeFiles/message-enumerator_autogen",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/root/ros2_ws/build/witmotion_ros/witmotion-uart-qt/CMakeFiles/message-enumerator_autogen.rule",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "UTILITY"
+}

@@ -1,0 +1,9 @@
+/root/ros2_ws/build/mini_launchpad/CMakeFiles/uninstall.dir
+/root/ros2_ws/build/mini_launchpad/CMakeFiles/mini_launchpad_uninstall.dir
+/root/ros2_ws/build/mini_launchpad/CMakeFiles/test.dir
+/root/ros2_ws/build/mini_launchpad/CMakeFiles/edit_cache.dir
+/root/ros2_ws/build/mini_launchpad/CMakeFiles/rebuild_cache.dir
+/root/ros2_ws/build/mini_launchpad/CMakeFiles/list_install_components.dir
+/root/ros2_ws/build/mini_launchpad/CMakeFiles/install.dir
+/root/ros2_ws/build/mini_launchpad/CMakeFiles/install/local.dir
+/root/ros2_ws/build/mini_launchpad/CMakeFiles/install/strip.dir

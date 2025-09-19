@@ -1,0 +1,96 @@
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+-- Found rclpy: 3.3.17 (/opt/ros/humble/share/rclpy/cmake)
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /root/ros2_ws/build/mini_launchpad
+-- Install configuration: ""
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/launch
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/launch/global
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/launch/global/Snav2_backend.py
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/launch/global/nav2_backend.py
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/launch/real
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/launch/real/2r_navigation_launch.py
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/launch/real/mapping
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/launch/real/mapping/Xr_mappingWcartographer.launch.py
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/launch/real/mapping/Xr_mappingWslam.launch.py
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/launch/real/1r_robot_localizationEKF.launch.py
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/launch/real/0.2r_mini.launch.py
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/launch/real/3r_Lamcl.launch.py
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/launch/real/sensor
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/launch/real/sensor/jt901.launch.py
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/launch/real/sensor/sllidar_s1_launch.py
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/launch/real/0.1r_sensorLaunch.launch.py
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/launch/real/3r_LCartographer.launch.py
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/launch/sim
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/launch/sim/mapping
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/launch/sim/mapping/Xs_mappingWslam.launch.py
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/launch/sim/mapping/Xs_mappingWcartographer.launch.py
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/launch/sim/3s_LCartographer.launch.py
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/launch/sim/2s_navigation.launch.py
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/launch/sim/1s_robot_localizationEKF.launch.py
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/launch/sim/3s_Lamcl.launch.py
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/config
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/config/localization
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/config/localization/Slocalization_amcl.yaml
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/config/localization/baseCartographer.lua
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/config/localization/localizationCartographer.lua
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/config/localization/Rlocalization_amcl.yaml
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/config/localization/localization_amcl.yaml
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/config/sensor
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/config/sensor/jt901.yml
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/config/slam_configs
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/config/slam_configs/SLAMcartographer.lua
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/config/slam_configs/mapper_params_online_async.yaml
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/config/slam_configs/mapper_params_online_sync.yaml
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/config/nav2_nav
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/config/nav2_nav/rover_nav2_params.yaml
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/config/nav2_nav/Srover_nav2_params_dstarP.yaml
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/config/nav2_nav/rover_nav2_params_dstarP.yaml
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/config/nav2_nav/Srover_nav2_params.yaml
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/config/odom_filtered_localization
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/config/odom_filtered_localization/localization_ekf.yaml
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/config/odom_filtered_localization/Rlocalization_ekf.yaml
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/config/odom_filtered_localization/Slocalization_ekf.yaml
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/maps
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/maps/simul
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/maps/simul/my_map.yaml
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/maps/simul/maze_map.data
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/maps/simul/maze_map.yaml
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/maps/simul/maze_cart.pbstream
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/maps/simul/maze_map.posegraph
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/maps/simul/maze_cart.yaml
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/maps/simul/my_map.pgm
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/maps/simul/visu_map.conf.yaml
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/maps/simul/maze_map.pgm
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/maps/simul/maze_cart.pgm
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/maps/real
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/maps/real/map.yaml
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/maps/real/map.pgm
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/maps/elettra
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/maps/elettra/Cart
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/maps/elettra/Cart/map.png
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/maps/elettra/Cart/map.pbstream
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/maps/elettra/amclS
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/maps/elettra/amclS/map.yaml
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/maps/elettra/amclS/map.pgm
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/maps/elettra/amcl
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/maps/elettra/amcl/map.yaml
+-- Installing: /root/ros2_ws/install/mini_launchpad/share/mini_launchpad/maps/elettra/amcl/map.pgm
+[31mCMake Error at cmake_install.cmake:46 (file):
+  file INSTALL cannot find "/root/ros2_ws/src/mini_launchpad/urdf": No such
+  file or directory.
+
+[0m

@@ -1,0 +1,51 @@
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+-- Found rclpy: 3.3.17 (/opt/ros/humble/share/rclpy/cmake)
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /root/ros2_ws/build/mini_simulation
+-- Install configuration: ""
+-- Installing: /root/ros2_ws/install/mini_simulation/share/mini_simulation/launch
+-- Installing: /root/ros2_ws/install/mini_simulation/share/mini_simulation/launch/sim
+-- Installing: /root/ros2_ws/install/mini_simulation/share/mini_simulation/launch/sim/0s_ign_spawn_world_gazebo.launch.py
+-- Installing: /root/ros2_ws/install/mini_simulation/share/mini_simulation/launch/sim/1s_ign_spawn_mini_gazebo.launch.py
+-- Installing: /root/ros2_ws/install/mini_simulation/share/mini_simulation/meshes
+-- Installing: /root/ros2_ws/install/mini_simulation/share/mini_simulation/meshes/rplidar_s2.dae
+-- Installing: /root/ros2_ws/install/mini_simulation/share/mini_simulation/meshes/centered_rplidar-s1m1-r1.stl
+-- Installing: /root/ros2_ws/install/mini_simulation/share/mini_simulation/meshes/hub_6.5in.dae
+-- Installing: /root/ros2_ws/install/mini_simulation/share/mini_simulation/meshes/mini_chassis.dae
+-- Installing: /root/ros2_ws/install/mini_simulation/share/mini_simulation/meshes/rplidar-s1m1-r1.stl
+-- Installing: /root/ros2_ws/install/mini_simulation/share/mini_simulation/urdf
+-- Installing: /root/ros2_ws/install/mini_simulation/share/mini_simulation/urdf/accessories
+-- Installing: /root/ros2_ws/install/mini_simulation/share/mini_simulation/urdf/accessories/rplidar_s2.urdf
+-- Installing: /root/ros2_ws/install/mini_simulation/share/mini_simulation/urdf/accessories/imu.urdf
+-- Installing: /root/ros2_ws/install/mini_simulation/share/mini_simulation/urdf/accessories/rover_dev_payload.urdf
+-- Installing: /root/ros2_ws/install/mini_simulation/share/mini_simulation/urdf/test.urdf
+-- Installing: /root/ros2_ws/install/mini_simulation/share/mini_simulation/urdf/mini.urdf
+-- Installing: /root/ros2_ws/install/mini_simulation/share/ament_index/resource_index/package_run_dependencies/mini_simulation
+-- Installing: /root/ros2_ws/install/mini_simulation/share/ament_index/resource_index/parent_prefix_path/mini_simulation
+-- Installing: /root/ros2_ws/install/mini_simulation/share/mini_simulation/environment/ament_prefix_path.sh
+-- Installing: /root/ros2_ws/install/mini_simulation/share/mini_simulation/environment/ament_prefix_path.dsv
+-- Installing: /root/ros2_ws/install/mini_simulation/share/mini_simulation/environment/path.sh
+-- Installing: /root/ros2_ws/install/mini_simulation/share/mini_simulation/environment/path.dsv
+-- Installing: /root/ros2_ws/install/mini_simulation/share/mini_simulation/local_setup.bash
+-- Installing: /root/ros2_ws/install/mini_simulation/share/mini_simulation/local_setup.sh
+-- Installing: /root/ros2_ws/install/mini_simulation/share/mini_simulation/local_setup.zsh
+-- Installing: /root/ros2_ws/install/mini_simulation/share/mini_simulation/local_setup.dsv
+-- Installing: /root/ros2_ws/install/mini_simulation/share/mini_simulation/package.dsv
+-- Installing: /root/ros2_ws/install/mini_simulation/share/ament_index/resource_index/packages/mini_simulation
+-- Installing: /root/ros2_ws/install/mini_simulation/share/mini_simulation/cmake/mini_simulationConfig.cmake
+-- Installing: /root/ros2_ws/install/mini_simulation/share/mini_simulation/cmake/mini_simulationConfig-version.cmake
+-- Installing: /root/ros2_ws/install/mini_simulation/share/mini_simulation/package.xml

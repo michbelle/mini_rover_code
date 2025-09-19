@@ -23,10 +23,6 @@ install(DIRECTORY
   launch
   config
   maps
-  urdf
-  meshes
-  rviz
-  rmf_code
   DESTINATION share/${PROJECT_NAME})
   
 

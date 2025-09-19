@@ -1,0 +1,5 @@
+-I/root/ros2_ws/src/witmotion_IMU_ros/witmotion-uart-qt/include
+-I/root/ros2_ws/build/witmotion_ros/witmotion-uart-qt
+-o
+/root/ros2_ws/build/witmotion_ros/witmotion-uart-qt/include/witmotion/moc_wt901-uart.cpp
+/root/ros2_ws/src/witmotion_IMU_ros/witmotion-uart-qt/include/witmotion/wt901-uart.h

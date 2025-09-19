@@ -1,0 +1,6 @@
+fatal: not a git repository: /root/ros2_ws/src/witmotion_IMU_ros/witmotion-uart-qt/../../../../../.git/modules/src/mini_rover_code/modules/src/witmotion_IMU_ros/modules/witmotion-uart-qt
+[33mCMake Warning at CMakeLists.txt:56 (message):
+  tf2_geometry_msgs include dir:
+  /opt/ros/humble/include/tf2_geometry_msgs;/opt/ros/humble/include/geometry_msgs;/usr/include/eigen3;/opt/ros/humble/include/tf2;/opt/ros/humble/include/tf2_ros
+
+[0m

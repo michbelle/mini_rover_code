@@ -1,0 +1,57 @@
+[0.184s] Invoking command in '/root/ros2_ws/build/roverrobotics_gazebo': AMENT_PREFIX_PATH=/root/ros2_ws/install/roverrobotics_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/root/ros2_ws/install/roverrobotics_description:/opt/ros/humble /usr/bin/cmake /root/ros2_ws/src/roverrobotics_ros2/roverrobotics_gazebo -DCMAKE_INSTALL_PREFIX=/root/ros2_ws/install/roverrobotics_gazebo
+[0.407s] -- The C compiler identification is GNU 11.4.0
+[0.599s] -- The CXX compiler identification is GNU 11.4.0
+[0.625s] -- Detecting C compiler ABI info
+[0.755s] -- Detecting C compiler ABI info - done
+[0.771s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.771s] -- Detecting C compile features
+[0.772s] -- Detecting C compile features - done
+[0.779s] -- Detecting CXX compiler ABI info
+[0.904s] -- Detecting CXX compiler ABI info - done
+[0.920s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.922s] -- Detecting CXX compile features
+[0.922s] -- Detecting CXX compile features - done
+[0.929s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.239s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[1.458s] -- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.656s] -- Added test 'copyright' to check source files copyright and LICENSE
+[1.659s] -- Added test 'flake8' to check Python code syntax and style conventions
+[1.661s] -- Added test 'lint_cmake' to check CMake code style
+[1.663s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[1.666s] -- Added test 'xmllint' to check XML markup files
+[1.671s] -- Configuring done
+[1.678s] -- Generating done
+[1.682s] -- Build files have been written to: /root/ros2_ws/build/roverrobotics_gazebo
+[1.691s] Invoked command in '/root/ros2_ws/build/roverrobotics_gazebo' returned '0': AMENT_PREFIX_PATH=/root/ros2_ws/install/roverrobotics_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/root/ros2_ws/install/roverrobotics_description:/opt/ros/humble /usr/bin/cmake /root/ros2_ws/src/roverrobotics_ros2/roverrobotics_gazebo -DCMAKE_INSTALL_PREFIX=/root/ros2_ws/install/roverrobotics_gazebo
+[1.693s] Invoking command in '/root/ros2_ws/build/roverrobotics_gazebo': AMENT_PREFIX_PATH=/root/ros2_ws/install/roverrobotics_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/root/ros2_ws/install/roverrobotics_description:/opt/ros/humble /usr/bin/cmake --build /root/ros2_ws/build/roverrobotics_gazebo -- -j8 -l8
+[1.760s] Invoked command in '/root/ros2_ws/build/roverrobotics_gazebo' returned '0': AMENT_PREFIX_PATH=/root/ros2_ws/install/roverrobotics_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/root/ros2_ws/install/roverrobotics_description:/opt/ros/humble /usr/bin/cmake --build /root/ros2_ws/build/roverrobotics_gazebo -- -j8 -l8
+[1.765s] Invoking command in '/root/ros2_ws/build/roverrobotics_gazebo': AMENT_PREFIX_PATH=/root/ros2_ws/install/roverrobotics_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/root/ros2_ws/install/roverrobotics_description:/opt/ros/humble /usr/bin/cmake --install /root/ros2_ws/build/roverrobotics_gazebo
+[1.776s] -- Install configuration: ""
+[1.778s] -- Installing: /root/ros2_ws/install/roverrobotics_gazebo/share/roverrobotics_gazebo/launch
+[1.779s] -- Installing: /root/ros2_ws/install/roverrobotics_gazebo/share/roverrobotics_gazebo/launch/4wd_rover_gazebo.launch.py
+[1.779s] -- Installing: /root/ros2_ws/install/roverrobotics_gazebo/share/roverrobotics_gazebo/launch/max_gazebo.launch.py
+[1.779s] -- Installing: /root/ros2_ws/install/roverrobotics_gazebo/share/roverrobotics_gazebo/launch/mini_gazebo.launch.py
+[1.779s] -- Installing: /root/ros2_ws/install/roverrobotics_gazebo/share/roverrobotics_gazebo/launch/miti_gazebo.launch.py
+[1.779s] -- Installing: /root/ros2_ws/install/roverrobotics_gazebo/share/roverrobotics_gazebo/launch/2wd_rover_gazebo.launch.py
+[1.780s] -- Installing: /root/ros2_ws/install/roverrobotics_gazebo/share/roverrobotics_gazebo/launch/flipper_gazebo.launch.py
+[1.780s] -- Installing: /root/ros2_ws/install/roverrobotics_gazebo/share/roverrobotics_gazebo/launch/miti_65_gazebo.launch.py
+[1.780s] -- Installing: /root/ros2_ws/install/roverrobotics_gazebo/share/roverrobotics_gazebo/worlds
+[1.780s] -- Installing: /root/ros2_ws/install/roverrobotics_gazebo/share/roverrobotics_gazebo/worlds/depot.sdf
+[1.780s] -- Installing: /root/ros2_ws/install/roverrobotics_gazebo/share/roverrobotics_gazebo/worlds/maze.sdf
+[1.780s] -- Installing: /root/ros2_ws/install/roverrobotics_gazebo/share/roverrobotics_gazebo/worlds/warehouse.sdf
+[1.781s] -- Installing: /root/ros2_ws/install/roverrobotics_gazebo/share/ament_index/resource_index/package_run_dependencies/roverrobotics_gazebo
+[1.793s] -- Installing: /root/ros2_ws/install/roverrobotics_gazebo/share/ament_index/resource_index/parent_prefix_path/roverrobotics_gazebo
+[1.793s] -- Installing: /root/ros2_ws/install/roverrobotics_gazebo/share/roverrobotics_gazebo/environment/ament_prefix_path.sh
+[1.793s] -- Installing: /root/ros2_ws/install/roverrobotics_gazebo/share/roverrobotics_gazebo/environment/ament_prefix_path.dsv
+[1.793s] -- Installing: /root/ros2_ws/install/roverrobotics_gazebo/share/roverrobotics_gazebo/environment/path.sh
+[1.793s] -- Installing: /root/ros2_ws/install/roverrobotics_gazebo/share/roverrobotics_gazebo/environment/path.dsv
+[1.794s] -- Installing: /root/ros2_ws/install/roverrobotics_gazebo/share/roverrobotics_gazebo/local_setup.bash
+[1.794s] -- Installing: /root/ros2_ws/install/roverrobotics_gazebo/share/roverrobotics_gazebo/local_setup.sh
+[1.794s] -- Installing: /root/ros2_ws/install/roverrobotics_gazebo/share/roverrobotics_gazebo/local_setup.zsh
+[1.794s] -- Installing: /root/ros2_ws/install/roverrobotics_gazebo/share/roverrobotics_gazebo/local_setup.dsv
+[1.794s] -- Installing: /root/ros2_ws/install/roverrobotics_gazebo/share/roverrobotics_gazebo/package.dsv
+[1.794s] -- Installing: /root/ros2_ws/install/roverrobotics_gazebo/share/ament_index/resource_index/packages/roverrobotics_gazebo
+[1.798s] -- Installing: /root/ros2_ws/install/roverrobotics_gazebo/share/roverrobotics_gazebo/cmake/roverrobotics_gazeboConfig.cmake
+[1.798s] -- Installing: /root/ros2_ws/install/roverrobotics_gazebo/share/roverrobotics_gazebo/cmake/roverrobotics_gazeboConfig-version.cmake
+[1.798s] -- Installing: /root/ros2_ws/install/roverrobotics_gazebo/share/roverrobotics_gazebo/package.xml
+[1.799s] Invoked command in '/root/ros2_ws/build/roverrobotics_gazebo' returned '0': AMENT_PREFIX_PATH=/root/ros2_ws/install/roverrobotics_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/root/ros2_ws/install/roverrobotics_description:/opt/ros/humble /usr/bin/cmake --install /root/ros2_ws/build/roverrobotics_gazebo
