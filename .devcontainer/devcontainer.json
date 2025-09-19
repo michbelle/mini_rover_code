@@ -1,7 +1,7 @@
 {
     "name": "ROS 2 dev Container",
     "privileged": true,
-    "image": "osrf/ros:humble-desktop-full",
+    "image": "osrf/ros:jazzy-desktop-full",
     "remoteUser": "root",
     "workspaceFolder": "/root/ros2_ws/",
     "workspaceMount": "source=${localWorkspaceFolder},target=/root/ros2_ws/,type=bind",
@@ -28,11 +28,11 @@
         "--pid=host",
         "--ipc=host",
         "-e", "DISPLAY=${env:DISPLAY}",
-        "--name=miniHumbleDevIma"
+        "--name=minijazzyDevIma"
     ],
     "mounts": [
        "source=/tmp/.X11-unix,target=/tmp/.X11-unix,type=bind,consistency=cached",
        "source=/dev/dri,target=/dev/dri,type=bind,consistency=cached"
     ],
-    "postCreateCommand": "echo 'source /opt/ros/humble/setup.bash' >> ~/.bashrc && apt update && rosdep update && rosdep install -r --from-paths . -y"
+    "postCreateCommand": "echo 'source /opt/ros/jazzy/setup.bash' >> ~/.bashrc && apt update && rosdep update && rosdep install -r --from-paths . -y"
 }
