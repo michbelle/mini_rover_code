@@ -15,4 +15,11 @@ is written inside the `~/.bashrc` file
 ```bash
 sudo ip link set can0 type can bitrate 500000
 sudo ip link set can0 up
+
+## Rover Mini instruction
+
+
+install package for witmotion
+```bash
+apt-get install libqt5serialport5-dev
 ```
