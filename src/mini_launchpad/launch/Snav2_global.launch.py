@@ -18,7 +18,7 @@ def generate_launch_description():
     # Create the launch configuration variables
     use_sim_time = LaunchConfiguration('use_sim_time')
 
-    info_domain_id=LogInfo(msg='launching simulation on ROS_DOMAIN_ID : 10'),
+    # info_domain_id=LogInfo(msg='launching simulation on ROS_DOMAIN_ID : 10'),
 
     
     declare_use_sim_time_cmd = DeclareLaunchArgument(
@@ -61,7 +61,7 @@ def generate_launch_description():
 
     # Create the launch description and populate
     ld = LaunchDescription()
-    ld.add_action(info_domain_id)
+    # ld.add_action(info_domain_id)
     # Declare the launch options
     ld.add_action(declare_use_sim_time_cmd)
 
