@@ -36,9 +36,9 @@ amcl:
       # y : 22.768
       # yaw: 1.074
       # record 4
-      x : 5.035
-      y : 21.908
-      yaw : 1.156
+      # x : 5.035
+      # y : 21.908
+      # yaw : 1.156
       # # record7 
       # x : 5.8016
       # y : 23.8143
@@ -48,6 +48,10 @@ amcl:
       # y: 22.2455
       # z: 1.101
       # yaw: 1.070
+      #record 3...
+      x : 5.029 
+      y : 22.285
+      yaw : 1.109
 
 map_server:
   ros__parameters:
