@@ -58,6 +58,14 @@ def generate_launch_description():
         name="rviz2_mini_nav",
         arguments=["-d", rviz_config_dir],
         output="screen")
+    
+
+    test_node_no_localization = Node(
+                package="tf2_ros",
+                executable="static_transform_publisher",
+                output="screen" ,
+                arguments=["0", "0", "0", "0", "0", "0", "odom", "map"]
+            )
 
     # Create the launch description and populate
     ld = LaunchDescription()
@@ -69,7 +77,8 @@ def generate_launch_description():
     ld.add_action(odometry_increase_precision)
     ld.add_action(nav_launch)
     ld.add_action(localization_nav)
-    ld.add_action(rviz_node)
+    # ld.add_action(rviz_node)
     
+    # ld.add_action(test_node_no_localization)
 
     return ld
