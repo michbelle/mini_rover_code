@@ -77,7 +77,7 @@ def generate_launch_description():
     ld.add_action(odometry_increase_precision)
     ld.add_action(nav_launch)
     ld.add_action(localization_nav)
-    # ld.add_action(rviz_node)
+    ld.add_action(rviz_node)
     
     # ld.add_action(test_node_no_localization)
 
