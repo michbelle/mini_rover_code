@@ -45,8 +45,8 @@ controller_server:
     use_sim_time: True
     controller_frequency: 20.0
     min_x_velocity_threshold: 0.001
-    min_y_velocity_threshold: 0.5
-    min_theta_velocity_threshold: 0.01
+    min_y_velocity_threshold: 0.001
+    min_theta_velocity_threshold: 0.001
     failure_tolerance: 0.3
     odom_topic: "odometry/filtered"
     progress_checker_plugin: "progress_checker"
@@ -89,7 +89,7 @@ controller_server:
       # vx_samples: 20
       # vy_samples: 0
       # vtheta_samples: 40
-      # sim_time: 3.0
+      # sim_time: 5.0
       # linear_granularity: 0.05
       # angular_granularity: 0.025
       # transform_tolerance: 0.2
@@ -194,14 +194,14 @@ local_costmap:
       use_sim_time: True
       update_frequency: 10.0
       publish_frequency: 5.0
-      global_frame: odom
+      global_frame: map
       robot_base_frame: base_link
       rolling_window: true
       width: 8
       height: 8
       resolution: 0.05
-      footprint: "[[0.27305, 0.1778],[0.27305, -0.1778],[-0.27305, -0.1778],[-0.27305, 0.1778]]"
-      footprint_padding: 0.01
+      footprint: "[[0.3, 0.2],[0.3, -0.2],[-0.3, -0.2],[-0.3, 0.2]]"
+      footprint_padding: 0.1
       plugins: ["voxel_layer", "inflation_layer"]
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"
@@ -238,10 +238,10 @@ global_costmap:
       use_sim_time: True
       update_frequency: 1.0
       publish_frequency: 1.0
-      global_frame: map
+      global_frame: map #odom
       robot_base_frame: base_link
       footprint: "[[0.27305, 0.1778],[0.27305, -0.1778],[-0.27305, -0.1778],[-0.27305, 0.1778]]"
-      footprint_padding: 0.025
+      footprint_padding: 0.1
       resolution: 0.05
       track_unknown_space: true # If false, treats unknown space as free space, else as unknown space.
       plugins: ["static_layer", "obstacle_layer", "inflation_layer"]
