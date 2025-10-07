@@ -99,7 +99,7 @@ Visualization Manager:
       Use Timestamp: false
       Value: true
     - Alpha: 0.699999988079071
-      Binary representation: false
+      Binary representation: true
       Binary threshold: 100
       Class: rviz_default_plugins/Map
       Color Scheme: map
@@ -370,16 +370,16 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/ThirdPersonFollower
-      Distance: 17.18060302734375
+      Distance: 16.21217155456543
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 7.231777667999268
-        Y: 27.754985809326172
-        Z: -0.0013663868885487318
+        X: 7.070826053619385
+        Y: 21.13214874267578
+        Z: -0.0013702015858143568
       Focal Shape Fixed Size: false
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false

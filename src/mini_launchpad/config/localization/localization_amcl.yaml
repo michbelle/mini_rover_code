@@ -41,7 +41,10 @@ amcl:
     allow_parameter_qos_overrides : True #     Whether to allow QoS profiles to be overwritten with parameterized values.
     set_initial_pose: True
     initial_pose:
-      # # simul_gz
+      # # simul_gz 
+      x : 5.511 
+      y : 22.560 
+      yaw: 1.912
       # x : 5.152
       # y : 23.292 
       # yaw: 0.025
@@ -58,9 +61,9 @@ amcl:
       # y : 21.908
       # yaw : 1.156
       # # record7 
-      x : 5.61197
-      y : 23.9554
-      yaw: 2.71
+      # x : 5.61197
+      # y : 23.9554
+      # yaw: 2.71
       # old but unknown
       # x: 5.72118
       # y: 22.2455
