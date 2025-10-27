@@ -43,18 +43,21 @@ def generate_launch_description():
     odometry_increase_precision = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(os.path.join(launch_folder, "launch", "sim", "1r_robot_localizationEKF.launch.py")),
         launch_arguments={
+            'use_sim_time' : use_sim_time
         }.items()
     )
 
     nav_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(os.path.join(launch_folder, "launch", "sim", "2r_navigation_launch.py")),
         launch_arguments={
+            'use_sim_time' : use_sim_time
         }.items()
     )
 
     localization_nav = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(os.path.join(launch_folder, "launch", "sim", "3r_Lamcl.launch.py")),
         launch_arguments={
+            'use_sim_time' : use_sim_time
         }.items()
     )
 
@@ -81,8 +84,9 @@ def generate_launch_description():
 
     # Launch Gazebo
     ld.add_action(odometry_increase_precision)
+    ld.add_action(nav_launch)
     ld.add_action(localization_nav)
     ld.add_action(rviz_node)
-    ld.add_action(nav_launch)
+
 
     return ld

@@ -16,6 +16,8 @@ is written inside the `~/.bashrc` file
 sudo ip link set can0 type can bitrate 500000
 sudo ip link set can0 up
 
+sudo ip link set can0 type can bitrate 500000 sjw 2 dbitrate 2000000 dsjw 15 berr-reporting on fd on
+
 ## Rover Mini instruction
 
 

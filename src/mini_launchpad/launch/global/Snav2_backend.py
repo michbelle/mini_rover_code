@@ -45,7 +45,9 @@ def generate_launch_description():
                        'planner_server',
                        'behavior_server',
                        'bt_navigator',
-                       'waypoint_follower',]
+                       'waypoint_follower',
+                       'velocity_smoother',
+                       'collision_monitor']
 
     # Map fully qualified names to relative ones so the node's namespace can be prepended.
     # In case of the transforms (tf), currently, there doesn't seem to be a better alternative
@@ -90,7 +92,7 @@ def generate_launch_description():
         description='Automatically startup the nav2 stack')
 
     declare_use_composition_cmd = DeclareLaunchArgument(
-        'use_composition', default_value='False',
+        'use_composition', default_value='True',
         description='Use composed bringup if True')
 
     declare_container_name_cmd = DeclareLaunchArgument(
@@ -111,13 +113,12 @@ def generate_launch_description():
             Node(
                 package='nav2_controller',
                 executable='controller_server',
-                # prefix=['gdb -ex run --args'],
                 output='screen',
                 respawn=use_respawn,
                 respawn_delay=2.0,
                 parameters=[configured_params],
                 arguments=['--ros-args', '--log-level', log_level],
-                remappings=remappings),
+                remappings=remappings+[("cmd_vel","cmd_vel_ctrl")]),
             Node(
                 package='nav2_smoother',
                 executable='smoother_server',
@@ -128,6 +129,24 @@ def generate_launch_description():
                 parameters=[configured_params],
                 arguments=['--ros-args', '--log-level', log_level],
                 remappings=remappings),
+            Node(
+                package='nav2_velocity_smoother',
+                executable='velocity_smoother',
+                name='velocity_smoother',
+                output='screen',
+                respawn=use_respawn,
+                respawn_delay=2.0,
+                parameters=[configured_params],
+                arguments=['--ros-args', '--log-level', log_level],
+                remappings=remappings + [('cmd_vel', 'cmd_vel_ctrl'), ('cmd_vel_smoothed', 'cmd_vel_OUT')]),
+            Node(
+                package='nav2_collision_monitor',
+                executable='collision_monitor',
+                output='screen',
+                emulate_tty=True,
+                parameters=[configured_params],
+                remappings=remappings,
+            ),
             Node(
                 package='nav2_planner',
                 executable='planner_server',
@@ -189,7 +208,7 @@ def generate_launch_description():
                 plugin='nav2_controller::ControllerServer',
                 name='controller_server',
                 parameters=[configured_params],
-                remappings=remappings),
+                remappings=remappings+[("cmd_vel","cmd_vel_ctrl")]), 
             ComposableNode(
                 package='nav2_smoother',
                 plugin='nav2_smoother::SmootherServer',
@@ -227,6 +246,18 @@ def generate_launch_description():
                 parameters=[{'use_sim_time': use_sim_time,
                              'autostart': autostart,
                              'node_names': lifecycle_nodes}]),
+            ComposableNode(
+                package='nav2_velocity_smoother',
+                plugin='nav2_velocity_smoother::VelocitySmoother',
+                name='velocity_smoother',
+                parameters=[configured_params],
+                remappings=remappings+ [('cmd_vel', 'cmd_vel_ctrl'), ('cmd_vel_smoothed', 'cmd_vel_OUT')]),
+            ComposableNode(
+                package='nav2_collision_monitor',
+                plugin='nav2_collision_monitor::CollisionMonitor',
+                name='collision_monitor',
+                parameters=[configured_params],
+                remappings=remappings,),
         ],
     )
 

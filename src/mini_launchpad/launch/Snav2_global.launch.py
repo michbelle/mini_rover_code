@@ -18,8 +18,6 @@ def generate_launch_description():
     # Create the launch configuration variables
     use_sim_time = LaunchConfiguration('use_sim_time')
 
-    # info_domain_id=LogInfo(msg='launching simulation on ROS_DOMAIN_ID : 10'),
-
     
     declare_use_sim_time_cmd = DeclareLaunchArgument(
         'use_sim_time',
@@ -32,20 +30,23 @@ def generate_launch_description():
     odometry_increase_precision = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(os.path.join(launch_folder, "launch", "sim", "1s_robot_localizationEKF.launch.py")),
         launch_arguments={
+            'use_sim_time' : use_sim_time
         }.items()
     )
 
     nav_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(os.path.join(launch_folder, "launch", "sim", "2s_navigation.launch.py")),
         launch_arguments={
+            'use_sim_time' : use_sim_time
         }.items()
     )
 
     localization_nav = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(os.path.join(launch_folder, "launch", "sim", "3s_Lamcl.launch.py")),
         launch_arguments={
+            'use_sim_time' : use_sim_time
         }.items()
-    )    
+    )
 
     rviz_config_dir = os.path.join(
             get_package_share_directory("mini_launchpad"),
@@ -58,18 +59,10 @@ def generate_launch_description():
         name="rviz2_mini_nav",
         arguments=["-d", rviz_config_dir],
         output="screen")
-    
-
-    test_node_no_localization = Node(
-                package="tf2_ros",
-                executable="static_transform_publisher",
-                output="screen" ,
-                arguments=["0", "0", "0", "0", "0", "0", "odom", "map"]
-            )
 
     # Create the launch description and populate
     ld = LaunchDescription()
-    # ld.add_action(info_domain_id)
+
     # Declare the launch options
     ld.add_action(declare_use_sim_time_cmd)
 
@@ -78,7 +71,6 @@ def generate_launch_description():
     ld.add_action(nav_launch)
     ld.add_action(localization_nav)
     ld.add_action(rviz_node)
-    
-    # ld.add_action(test_node_no_localization)
+
 
     return ld
