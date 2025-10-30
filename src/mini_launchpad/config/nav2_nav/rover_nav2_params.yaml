@@ -123,29 +123,62 @@ controller_server:
     min_y_velocity_threshold: 0.5
     min_theta_velocity_threshold: 0.01
     failure_tolerance: 0.3
-    progress_checker_plugin: "progress_checker"
-    goal_checker_plugins: ["general_goal_checker"] # "precise_goal_checker"
-    controller_plugins: ["FollowPath"]
     odom_topic: "odometry/filtered"
-
+    progress_checker_plugin: "progress_checker"
+    goal_checker_plugins: ["goal_checker"]
+    controller_plugins: ["FollowPath"]
     # Progress checker parameters
     progress_checker:
       plugin: "nav2_controller::SimpleProgressChecker"
       required_movement_radius: 0.5
       movement_time_allowance: 10.0
     # Goal checker parameters
-    #precise_goal_checker:
-    #  plugin: "nav2_controller::SimpleGoalChecker"
-    #  xy_goal_tolerance: 0.25
-    #  yaw_goal_tolerance: 0.25
-    #  stateful: True
-    general_goal_checker:
+    goal_checker:
       stateful: True
       plugin: "nav2_controller::SimpleGoalChecker"
       xy_goal_tolerance: 0.5
       yaw_goal_tolerance: 0.5
     # DWB parameters
     FollowPath:
+      # plugin: "dwb_core::DWBLocalPlanner"
+      # debug_trajectory_details: True
+      # min_vel_x: -0.26
+      # min_vel_y: 0.0
+      # max_vel_x: 0.26
+      # max_vel_y: 0.0
+      # max_vel_theta: 1.0
+      # min_speed_xy: 0.0
+      # max_speed_xy: 0.26
+      # min_speed_theta: 0.0
+      # acc_lim_x: 2.5
+      # acc_lim_y: 0.0
+      # acc_lim_theta: 3.2
+      # decel_lim_x: -2.5
+      # decel_lim_y: 0.0
+      # decel_lim_theta: -3.2
+      # vx_samples: 20
+      # vy_samples: 0
+      # vtheta_samples: 40
+      # sim_time: 5.0
+      # linear_granularity: 0.05
+      # angular_granularity: 0.025
+      # transform_tolerance: 0.2
+      # xy_goal_tolerance: 0.25
+      # trans_stopped_velocity: 0.25
+      # short_circuit_trajectory_evaluation: True
+      # limit_vel_cmd_in_traj: False
+      # stateful: True
+      # critics: ["RotateToGoal", "Oscillation", "BaseObstacle", "GoalAlign", "PathAlign", "PathDist", "GoalDist"]
+      # BaseObstacle.scale: 0.02
+      # PathAlign.scale: 32.0
+      # GoalAlign.scale: 24.0
+      # PathAlign.forward_point_distance: 0.1
+      # GoalAlign.forward_point_distance: 0.1
+      # PathDist.scale: 32.0
+      # GoalDist.scale: 24.0
+      # RotateToGoal.scale: 32.0
+      # RotateToGoal.slowing_factor: 5.0
+      # RotateToGoal.lookahead_time: -1.0
       plugin: "nav2_mppi_controller::MPPIController"
       time_steps: 56
       model_dt: 0.05
@@ -228,17 +261,17 @@ controller_server:
 local_costmap:
   local_costmap:
     ros__parameters:
+      use_sim_time: False
       update_frequency: 10.0
       publish_frequency: 5.0
-      global_frame: odom
+      global_frame: map #odom
       robot_base_frame: base_link
-      use_sim_time: True
       rolling_window: true
       width: 8
       height: 8
       resolution: 0.05
       footprint: "[[0.27305, 0.1778],[0.27305, -0.1778],[-0.27305, -0.1778],[-0.27305, 0.1778]]"
-      footprint_padding: 0.01
+      footprint_padding: 0.02
       plugins: ["voxel_layer", "inflation_layer"]
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"
@@ -272,15 +305,15 @@ local_costmap:
 global_costmap:
   global_costmap:
     ros__parameters:
+      use_sim_time: True
       update_frequency: 1.0
       publish_frequency: 1.0
-      global_frame: map
+      global_frame: map #odom
       robot_base_frame: base_link
-      use_sim_time: True
       footprint: "[[0.27305, 0.1778],[0.27305, -0.1778],[-0.27305, -0.1778],[-0.27305, 0.1778]]"
-      footprint_padding: 0.025
+      footprint_padding: 0.03
       resolution: 0.05
-      track_unknown_space: true
+      track_unknown_space: true # If false, treats unknown space as free space, else as unknown space.
       plugins: ["static_layer", "obstacle_layer", "inflation_layer"]
       obstacle_layer:
         plugin: "nav2_costmap_2d::ObstacleLayer"
@@ -318,7 +351,7 @@ planner_server:
   ros__parameters:
     expected_planner_frequency: 10.0
     use_sim_time: True
-    planner_plugins: ["GridBased","GridBased_Dstar"]
+    planner_plugins: ["GridBased"] #,"GridBased_Dstar"
     GridBased:
       plugin: "nav2_navfn_planner/NavfnPlanner"
       tolerance: 0.5
@@ -340,7 +373,6 @@ planner_server:
         enable: true
         from: "maps.json"
 
-
 smoother_server:
   ros__parameters:
     use_sim_time: True
@@ -353,45 +385,37 @@ smoother_server:
 
 behavior_server:
   ros__parameters:
-    costmap_topic: local_costmap/costmap_raw
-    footprint_topic: local_costmap/published_footprint
+    use_sim_time: False #not in the doc
+    costmap_topic: local_costmap/costmap_raw #    Raw costmap topic for collision checking on the local costmap.
+    footprint_topic: local_costmap/published_footprint #    Topic for footprint in the local costmap frame.
+    global_costmap_topic: global_costmap/costmap_raw #     Raw costmap topic for collision checking on the global costmap.
+    global_footprint_topic: global_costmap/published_footprint #    Topic for footprint in the global costmap frame.
     cycle_frequency: 10.0
-    behavior_plugins: ["spin", "backup", "drive_on_heading", "assisted_teleop", "wait"]
+    # behavior_plugins: ["spin", "backup", "drive_on_heading", "wait", "assisted_teleop"]
+    behavior_plugins: ["spin", "backup","drive_on_heading", "wait"]
     spin:
       plugin: "nav2_behaviors/Spin"
     backup:
       plugin: "nav2_behaviors/BackUp"
-    drive_on_heading:
-      plugin: "nav2_behaviors/DriveOnHeading"
     wait:
       plugin: "nav2_behaviors/Wait"
-    assisted_teleop:
-      plugin: "nav2_behaviors/AssistedTeleop"
-    global_frame: odom
+    drive_on_heading:
+      plugin: "nav2_behaviors/DriveOnHeading"
+    local_frame: odom # odom   #    Local reference frame.
+    global_frame: map # map , odom before
+    # global_frame: odom
     robot_base_frame: base_link
-    transform_tolerance: 1.2
-    use_sim_time: True
+    transform_tolerance: 1.2 #    TF transform tolerance.
+    transform_timeout: 0.1
     simulate_ahead_time: 2.0
     max_rotational_vel: 2.5
     min_rotational_vel: 0.55
     rotational_acc_lim: 4.2
-    # local_frame: odom
-    # global_frame: map
+    enable_stamped_cmd_vel : false # default false in Jazzy or older
 
 robot_state_publisher:
   ros__parameters:
     use_sim_time: True
-
-waypoint_follower:
-  ros__parameters:
-    use_sim_time: True
-    loop_rate: 20
-    stop_on_failure: false
-    waypoint_task_executor_plugin: "wait_at_waypoint"
-    wait_at_waypoint:
-      plugin: "nav2_waypoint_follower::WaitAtWaypoint"
-      enabled: True
-      waypoint_pause_duration: 200
 
 velocity_smoother:
   ros__parameters:
@@ -407,3 +431,101 @@ velocity_smoother:
     odom_duration: 0.1
     deadband_velocity: [0.0, 0.0, 0.0]
     velocity_timeout: 5.0
+
+collision_monitor:
+  ros__parameters:
+    use_sim_time: False
+    enabled: True
+    base_frame_id: "base_link"
+    odom_frame_id: "odom"
+    cmd_vel_in_topic: "cmd_vel_OUT"
+    cmd_vel_out_topic: "cmd_vel"
+    state_topic: "collision_monitor_state"
+    transform_tolerance: 0.5
+    source_timeout: 5.0
+    base_shift_correction: True
+    stop_pub_timeout: 2.0
+    enable_stamped_cmd_vel: False  # False for Jazzy or older
+    use_realtime_priority: false
+    polygons: ["PolygonStop", "PolygonSlow", "FootprintApproach"]
+    PolygonStop:
+      type: "polygon"
+      points: [0.320, 0.220,0.320, -0.220,-0.320, -0.220,-0.320, 0.220]
+      action_type: "stop"
+      max_points: 3  # max_points: 3 for Humble
+      visualize: True
+      polygon_pub_topic: "polygon_stop"
+      enabled: True
+    PolygonSlow: 
+      type: "polygon"
+      points: [0.370, 0.270,0.370, -0.270,-0.370, -0.270,-0.370, 0.270]
+      action_type: "slowdown"
+      max_points: 3  # max_points: 3 for Humble
+      slowdown_ratio: 0.3
+      visualize: True
+      polygon_pub_topic: "polygon_slowdown"
+      enabled: True
+    PolygonLimit:
+      type: "polygon"
+      points: [0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5]
+      action_type: "limit"
+      max_points: 3  # max_points: 3 for Humble
+      linear_limit: 0.4
+      angular_limit: 0.5
+      visualize: True
+      polygon_pub_topic: "polygon_limit"
+      enabled: True
+    FootprintApproach:
+      type: "polygon"
+      action_type: "approach"
+      footprint_topic: "/local_costmap/published_footprint"
+      time_before_collision: 2.0
+      simulation_time_step: 0.02
+      max_points: 5  # max_points: 5 for Humble
+      visualize: False
+      enabled: True
+    # VelocityPolygonSlow:
+    #   type: "velocity_polygon"
+    #   action_type: "stop"
+    #   min_points: 6
+    #   visualize: True
+    #   enabled: True
+    #   polygon_pub_topic: "velocity_polygon_slow"
+    #   velocity_polygons: ["rotation", "translation_forward", "translation_backward", "stopped"]
+    #   holonomic: false
+    #   rotation:
+    #     points: "[[0.3, 0.3], [0.3, -0.3], [-0.3, -0.3], [-0.3, 0.3]]"
+    #     linear_min: 0.0
+    #     linear_max: 0.05
+    #     theta_min: -1.0
+    #     theta_max: 1.0
+    #   translation_forward:
+    #     points: "[[0.35, 0.3], [0.35, -0.3], [-0.2, -0.3], [-0.2, 0.3]]"
+    #     linear_min: 0.0
+    #     linear_max: 1.0
+    #     theta_min: -1.0
+    #     theta_max: 1.0
+    #   translation_backward:
+    #     points: "[[0.2, 0.3], [0.2, -0.3], [-0.35, -0.3], [-0.35, 0.3]]"
+    #     linear_min: -1.0
+    #     linear_max: 0.0
+    #     theta_min: -1.0
+    #     theta_max: 1.0
+    #   # This is the last polygon to be checked, it should cover the entire range of robot's velocities
+    #   # It is used as the stopped polygon when the robot is not moving and as a fallback if the velocity
+    #   # is not covered by any of the other sub-polygons
+    #   stopped:
+    #     points: "[[0.25, 0.25], [0.25, -0.25], [-0.25, -0.25], [-0.25, 0.25]]"
+    #     linear_min: -1.0
+    #     linear_max: 1.0
+    #     theta_min: -1.0
+    #     theta_max: 1.0
+    observation_sources: ["scan"]
+    scan:
+      source_timeout: 0.2
+      type: "scan"
+      topic: "/scan"
+      enabled: True
+    # range:
+    #   type: "range"
+    #   topic: "/range"
