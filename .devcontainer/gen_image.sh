@@ -1,0 +1,1 @@
+DOCKER_BUILDKIT=1 docker build -t mini_dev_img . --ssh default
