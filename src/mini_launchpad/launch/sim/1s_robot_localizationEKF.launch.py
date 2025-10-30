@@ -30,14 +30,9 @@ def generate_launch_description():
         description='')
 
     # Start robot localization using an Extended Kalman filter
-    # robot_localization_file_path = Path(bringup_dir, 'config','odom_filtered_localization','Rlocalization_ekf.yaml')
 
-    params_file = LaunchConfiguration('params_file')
-    declare_param_file = DeclareLaunchArgument(
-            'params_file',
-            default_value=Path(bringup_dir, 'config','odom_filtered_localization','localization_ekf.yaml'),
-            description='Full path to the ROS2 parameters file to use'),
-    
+    robot_localization_param_file_path = os.path.join(bringup_dir, 'config','odom_filtered_localization','localization_ekf.yaml')
+
     # remappings = [('/tf', 'tf'),
     #               ('/tf_static', 'tf_static')]
 
@@ -46,7 +41,7 @@ def generate_launch_description():
         'use_sim_time': use_sim_time}
 
     configured_params = RewrittenYaml(
-        source_file=params_file,
+        source_file=robot_localization_param_file_path,
         root_key=namespace,
         param_rewrites=param_substitutions,
         convert_types=True)
@@ -63,7 +58,6 @@ def generate_launch_description():
 
     ld.add_action(declare_use_sim_time_argument)
     ld.add_action(declare_namespace)
-    ld.add_action(declare_param_file)
     ld.add_action(localization_node)
 
     

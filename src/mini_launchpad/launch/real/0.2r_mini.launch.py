@@ -11,7 +11,7 @@ from launch_ros.parameter_descriptions import ParameterValue
 
 
 def generate_launch_description():
-    rover_path = get_package_share_path('myCode')
+    rover_path = get_package_share_path('mini_simulation')
     default_model_path = rover_path / 'urdf/mini.urdf'
     
     model_arg = DeclareLaunchArgument(name='model', default_value=str(default_model_path),

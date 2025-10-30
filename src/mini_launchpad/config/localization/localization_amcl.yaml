@@ -1,32 +1,78 @@
 amcl:
   ros__parameters:
     use_sim_time: False
-    alpha1: 0.001 #    Expected process noise in odometry’s rotation estimate from rotation.
-    alpha2: 0.001 #    Expected process noise in odometry’s rotation estimate from translation.   
+    alpha1: 0.01 #    Expected process noise in odometry’s rotation estimate from rotation.
+    alpha2: 0.01 #    Expected process noise in odometry’s rotation estimate from translation.   
     alpha3: 0.1 #    Expected process noise in odometry’s translation estimate from translation.
-    alpha4: 0.001 #    Expected process noise in odometry’s translation estimate from rotation.
+    alpha4: 0.0001 #    Expected process noise in odometry’s translation estimate from rotation.
     base_frame_id: base_link
+    beam_skip_distance : 0.5 #     Ignore beams that most particles disagree with in Likelihood field model. Maximum distance to consider skipping for (m).
+    beam_skip_error_threshold : 0.9 #    Percentage of beams after not matching map to force full update due to bad convergence.
+    beam_skip_threshold : 0.3 #     Percentage of beams required to skip.
+    do_beamskip : False 
     global_frame_id: map
-    laser_model_type: likelihood_field
-    odom_frame_id: odom
-    max_beams: 100
+    lambda_short : 0.1 #     Exponential decay parameter for z_short part of model.
+    laser_likelihood_max_dist : 2.0 #     Maximum distance to do obstacle inflation on map, for use in likelihood_field model.
+    laser_max_range : 100.0
+    laser_min_range : -1.0
+    laser_model_type: likelihood_field #Which model to use, either beam, likelihood_field, or likelihood_field_prob. Same as likelihood_field but incorporates the beamskip feature, if enabled.
+    max_beams: 100 #    How many evenly-spaced beams in each scan to be used when updating the filter.
     max_particles: 2000
     min_particles: 500
-    robot_model_type: nav2_amcl::DifferentialMotionModel
+    odom_frame_id: odom
+    pf_err : 0.05 #     Particle Filter population error.
+    pf_z : 0.99 #     Particle filter population density. 2.33 is the 99% percentile.
+    recovery_alpha_fast : 0.0 #     Exponential decay rate for the fast average weight filter, used in deciding when to recover by adding random poses. A good value might be 0.1.
+    recovery_alpha_slow : 0.0 #Exponential decay rate for the slow average weight filter, used in deciding when to recover by adding random poses. A good value might be 0.001.
+    robot_model_type: nav2_amcl::DifferentialMotionModel # The fully-qualified type of the plugin class. Options are “nav2_amcl::DifferentialMotionModel” and “nav2_amcl::OmniMotionModel”. Users can also provide their own custom motion model plugin type.
+    save_pose_rate : 0.5 # Maximum rate (Hz) at which to store the last estimated pose and covariance to the parameter server, in the variables ~initial_pose_* and ~initial_cov_*. This saved pose will be used on subsequent runs to initialize the filter (-1.0 to disable).
+    sigma_hit : 0.2 #     Standard deviation for Gaussian model used in z_hit part of the model.
     tf_broadcast: true
-    transform_tolerance: 0.5
-    z_hit: 0.9
-    z_max: 0.05
-    z_rand: 0.1
-    z_short: 0.05
-    map_topic : /map
+    transform_tolerance: 0.5 #     Time with which to post-date the transform that is published, to indicate that this transform is valid into the future.
+    introspection_mode : "disabled" #     The introspection mode for services and actions. Options are “disabled”, “metadata”, “contents”.
+    update_min_a : 0.2 #     Rotational movement required before performing a filter update.
+    update_min_d : 0.10 #     Translational movement required before performing a filter update.
+    z_hit: 0.9 #     Mixture weight for z_hit part of model, sum of all used z weight must be 1. Beam uses all 4, likelihood model uses z_hit and z_rand..
+    z_max: 0.05 #    Mixture weight for z_max part of model, sum of all used z weight must be 1. Beam uses all 4, likelihood model uses z_hit and z_rand.
+    z_rand: 0.1 #     Mixture weight for z_rand part of model, sum of all used z weight must be 1. Beam uses all 4, likelihood model uses z_hit and z_rand..
+    z_short: 0.05 #     Mixture weight for z_short part of model, sum of all used z weight must be 1. Beam uses all 4, likelihood model uses z_hit and z_rand.
     scan_topic: /scan
+    map_topic : /map
+    allow_parameter_qos_overrides : True #     Whether to allow QoS profiles to be overwritten with parameterized values.
     set_initial_pose: True
     initial_pose:
-      x: 5.72118
-      y: 22.2455
-      z: 1.101
-      yaw: 1.070
+      # # simul_gz 
+      x : 5.511 
+      y : 22.560 
+      yaw: 1.912
+      # x : 5.152
+      # y : 23.292 
+      # yaw: 0.025
+      # # record1
+      # x : 5.310 
+      # y : 22.768
+      # yaw: 1.074
+      # # record2  
+      # x : 5.094
+      # y : 22.560
+      # yaw: 1.074
+      # record 4
+      # x : 5.035
+      # y : 21.908
+      # yaw : 1.156
+      # # record7 
+      # x : 5.61197
+      # y : 23.9554
+      # yaw: 2.71
+      # old but unknown
+      # x: 5.72118
+      # y: 22.2455
+      # z: 1.101
+      # yaw: 1.070
+      #record 3...
+      # x : 5.029 
+      # y : 22.285
+      # yaw : 1.109
 
 map_server:
   ros__parameters:

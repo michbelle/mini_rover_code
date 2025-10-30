@@ -29,7 +29,7 @@ from nav2_common.launch import RewrittenYaml
 
 def generate_launch_description():
     # Get the launch directory
-    miniLaunch_dir = get_package_share_directory('mini_launchpad')
+    mini_launchpad_dir = get_package_share_directory('mini_launchpad')
 
     # Create the launch configuration variables
     namespace = LaunchConfiguration('namespace')
@@ -65,12 +65,12 @@ def generate_launch_description():
 
     declare_use_sim_time_cmd = DeclareLaunchArgument(
         'use_sim_time',
-        default_value='false',
+        default_value='False',
         description='Use simulation (Gazebo) clock if true')
 
     declare_params_file_cmd = DeclareLaunchArgument(
         'params_file_nav',
-        default_value=os.path.join(miniLaunch_dir, 'config', 'nav2_nav', 'rover_nav2_params.yaml'),
+        default_value=os.path.join(mini_launchpad_dir, 'config', 'nav2_nav', 'rover_nav2_params.yaml'),
         description='Full path to the ROS2 parameters file to use for all launched nodes')
 
     declare_autostart_cmd = DeclareLaunchArgument(
@@ -78,7 +78,7 @@ def generate_launch_description():
         description='Automatically startup the nav2 stack')
 
     declare_use_composition_cmd = DeclareLaunchArgument(
-        'use_composition', default_value='False',
+        'use_composition', default_value='True',
         description='Whether to use composed bringup')
 
     declare_use_respawn_cmd = DeclareLaunchArgument(
@@ -106,7 +106,7 @@ def generate_launch_description():
             output='screen'),
 
         IncludeLaunchDescription(
-            PythonLaunchDescriptionSource(os.path.join(miniLaunch_dir, 'launch','gloabl','nav2_backend.py')),
+            PythonLaunchDescriptionSource(os.path.join(mini_launchpad_dir, 'launch', 'global', 'nav2_backend.py')),
             launch_arguments={'namespace': namespace,
                               'use_sim_time': use_sim_time,
                               'autostart': autostart,

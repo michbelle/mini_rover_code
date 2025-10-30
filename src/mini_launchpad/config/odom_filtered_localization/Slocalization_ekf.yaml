@@ -32,7 +32,7 @@ ekf_filter_node:
         # debug_out_file. I hope you like matrices! Please note that setting this to true will have strongly deleterious
         # effects on the performance of the node. Defaults to false if unspecified.
         debug: false
-        debug_out_file: /root/ff_ws/src/myTesiCode/ekf_filter_node_log.txt
+        debug_out_file: /openRMF_ws/ekf_filter_node_log.txt
 
         # Whether we'll allow old measurements to cause a re-publication of the updated state
         # permit_corrected_publication: false
