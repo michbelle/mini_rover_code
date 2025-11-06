@@ -25,14 +25,14 @@ def generate_launch_description():
     ##sensor launch
     #imu and laser scan
     imu_laser_sensor = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(os.path.join(launchpad_folder, "launch", "0.1r_sensorLaunch.launch.py")),
+        PythonLaunchDescriptionSource(os.path.join(launchpad_folder, "launch", "real", "0.1r_sensorLaunch.launch.py")),
         launch_arguments={
         }.items()
     )
 
     #can communication
     mini_can = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(os.path.join(launchpad_folder, "launch", "0.2r_mini.launch.py")),
+        PythonLaunchDescriptionSource(os.path.join(launchpad_folder, "launch", "real", "0.2r_mini.launch.py")),
         launch_arguments={
         }.items()
     )
