@@ -16,9 +16,9 @@
   // Zenoh related configurations
   mode: "client", // client
   connect: {
-    endpoints: ["tcp/172.19.233.54:7447"]
+    endpoints: ["tcp/172.19.125.42:7447"]
   },
   listen: {
-    endpoints: ["tcp/172.19.233.54:7447"]
+    endpoints: ["tcp/172.19.125.42:7447"]
   },
 }
