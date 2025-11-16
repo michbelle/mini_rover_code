@@ -73,6 +73,11 @@ amcl:
       # x : 5.029 
       # y : 22.285
       # yaw : 1.109
+      # real
+      x : 4.99323
+      y : 21.9668
+      yaw : 1.00724
+      
 
 map_server:
   ros__parameters:
